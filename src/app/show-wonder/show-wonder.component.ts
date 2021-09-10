@@ -17,6 +17,7 @@ export class ShowWonderComponent implements OnInit {
   imageUrl:string;
   colors = [];
   permaLink:string;
+  ownerWalletAddress:string;
   constructor(private readonly httpClient: HttpClient) { }
 
   ngOnInit(): void {
@@ -38,7 +39,7 @@ export class ShowWonderComponent implements OnInit {
       this.token_id = data.token_id;
       this.imageUrl = data.image_thumbnail_url;
       this.permaLink = data.permalink; 
-      console.log(this.permaLink);
+      this.ownerWalletAddress = data.owner.address;
       if(this.colors.length > 0){
       this.dynamicStyle = {
         'background-image': `linear-gradient(270deg , ${this.colors[0]}, ${this.colors[1]}, ${this.colors[2]}, ${this.colors[3]}, ${this.colors[4]})`,
