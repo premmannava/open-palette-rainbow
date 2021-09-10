@@ -1,0 +1,21 @@
+<div class="wrapper" [ngStyle]="dynamicStyle">
+  <div class="card" style="width: 18rem">
+    <img
+      [src]="imageUrl"
+      class="card-img-top"
+      alt="Owner Opensource profile picture"
+    />
+    <div class="card-body">
+      <h5 class="card-title" (click)="navigateToOpenSea(permaLink)">
+        #{{ token_id }}
+      </h5>
+      <p class="card-text">
+        <span class="d-block">Owned by: {{ ownerName | titlecase }}</span>
+      </p>
+
+      <a href="#" class="rainbow rainbow-5" (click)="getRandomPalette()"
+        >Random</a
+      >
+    </div>
+  </div>
+</div>
